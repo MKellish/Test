@@ -18,7 +18,7 @@ class HomeView extends Component {
 					<Paper style={{width: '70%', margin: 'auto', padding: '10px', marginTop: '10px'}}>
 					<h1>Pocket Screening Home</h1>
 					<Banner
-						text="Welcome to Pocket Desktop! Select an option below to get started"
+						text="Welcome to Pocket Desktop. Select the button below to get started."
 						style={{width: '60%', margin: 'auto', marginBottom: '10px'}}/>
 
 						<List style={{margin: 'auto', width: '200px', }}>
@@ -26,8 +26,8 @@ class HomeView extends Component {
 								primaryText="Start Exam"
 								leftIcon={<StartPatientIcon/>}
 								onClick={this.props.changeView.bind(this, viewIDs.cameraView)}/>
-							<ListItem primaryText="Add Patient" leftIcon={<AddIcon/>} />
-							<ListItem primaryText="Review Patient" leftIcon={<ReviewPatientIcon/>}/>
+							//<ListItem primaryText="Add Patient" leftIcon={<AddIcon/>} />
+							//<ListItem primaryText="Review Patient" leftIcon={<ReviewPatientIcon/>}/>
 						</List>
 					</Paper>
 				</div>

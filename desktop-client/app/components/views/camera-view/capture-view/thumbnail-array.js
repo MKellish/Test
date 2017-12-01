@@ -8,7 +8,7 @@ class ThumbnailArray extends Component {
 
 	onSelect = index => {
 		this.setState({currentSelection: index}, () => {
-			this.props.onSelect(index); 
+			this.props.onSelect(index);
 		});
 	}
 
@@ -16,10 +16,10 @@ class ThumbnailArray extends Component {
 		return (
 			<div>
 			{
-				this.props.images.reverse().map( (image, index) => {
+				this.props.images.map( (image, index) => {
 						return (
 						<img
-							key={image /*TODO: make a better key*/} 
+							key={image /*TODO: make a better key*/}
 							src={image}
 							onClick={() => {this.onSelect(index)}}
 							style={
@@ -28,6 +28,7 @@ class ThumbnailArray extends Component {
 									inlineBlock: this.props.isHorizontalLayout ? 'true':'false',
 									margin: '10px',
 									border: (this.props.displaySelectBorders && this.state.currentSelection == index) ? '2px solid black':'',
+									height: this.props.maxHeight,
 								}
 							}/>
 						);
@@ -41,10 +42,11 @@ class ThumbnailArray extends Component {
 
 ThumbnailArray.propTypes = {
 	images: PropTypes.array.isRequired, // array of image data uris
-	isHorizontalLayout: PropTypes.bool, 
+	isHorizontalLayout: PropTypes.bool,
 	maxThumbnailWidth: PropTypes.string,
 	onSelect: PropTypes.func,
 	displaySelectBorders: PropTypes.bool,
+	maxHeight: PropTypes.string,
 }
 
 ThumbnailArray.defaultProps = {
